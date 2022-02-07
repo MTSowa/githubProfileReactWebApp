@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+// import {useEffect} from 'react'
 import { useContext } from 'react';
 import Spinner from '../layouts/Spinner';
 import UserItem from './UserItem';
@@ -8,17 +8,15 @@ import GithubContext from '../../context/github/GithubContext'
 
 
 function UsersResults() {
-    const {users,isLoading,fetchUsers} = useContext(GithubContext)
-    // const [users,setUsers] = useState([])
-    // const [isLoading,setIsLoading] = useState(true)
+    const {users,loading} = useContext(GithubContext)
 
-    useEffect(() => {
-      fetchUsers()
-    }, []);
+    // useEffect(()=>{
+    //     fetchUsers()
+    // },[])
 
 
 
-    if (!isLoading) {
+    if (!loading) {
         return (
         <div className='grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2'>
             {users.map((user) => (
