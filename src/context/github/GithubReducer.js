@@ -3,7 +3,7 @@ export const githubReducer =(state,action)=>{
         case 'GET_USERS':
             return {
                 ...state,
-                users:action.usersData,
+                users:action.payload,
                 loading:false
             }
         case 'SET_LOADING':
@@ -15,7 +15,7 @@ export const githubReducer =(state,action)=>{
         case 'CLEAR_USERS':
             return{
                 ...state,
-                users:action.payload
+                users:[]
             }
         case 'GET_USER':
             return{
